@@ -22,6 +22,7 @@
         </ResourceDictionary>
     </Shell.Resources>
 <!--this is the navigation-->
+<!--Dennis was here-->
     <TabBar>
         <ShellContent Title="SignIn" Route="Login" ContentTemplate="{DataTemplate view:SignIn}" />
     </TabBar>
