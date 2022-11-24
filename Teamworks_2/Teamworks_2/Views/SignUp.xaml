@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teamworks_2.Views.SignUp"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Image Source="Teamworks.png" HeightRequest="100"/>
+            <Label Text="Sign Up"
+                VerticalOptions="StartAndExpand"  FontAttributes="Bold" FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="#005AD4"
+                />
+
+            <TableView HasUnevenRows="True" Margin="0,50">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout Spacing="10">
+
+                                <Label Text="First Name" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding UFirst_name}" Placeholder="First Name" TextColor="Green" FontSize="Medium" />
+
+                                <Label Text="Last Name" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding ULast_name}" Placeholder="Last Name" TextColor="Green" FontSize="Medium" />
+
+                                <Label Text="Email" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding UEmail}" Placeholder="Email" TextColor="{Binding ValidEmail}" FontSize="Medium" />
+
+                                <Label Text="Password" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding UPassword}" Placeholder="Password" TextColor="Green" FontSize="Medium" IsPassword="True"/>
+
+                                <Label Text="Is Host" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding UisHost}" Placeholder="enter True or False" TextColor="Green" FontSize="Medium"/>
+
+
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Button x:Name="btnConfirm" Text="Confirm" Clicked="btnConfirm_Clicked"
+                                        Style="{StaticResource mainStyle}" />
+                                    <Button x:Name="btnCancel" Text="Cancel" Clicked="btnCancel_Clicked"
+                                        Style="{StaticResource mainStyle}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

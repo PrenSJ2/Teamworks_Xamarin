@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Teamworks_2.Views.Bookings">
+<ContentPage.Content>
+        <StackLayout>
+            <Label Text="Persons List"
+                   FontAttributes="Bold" FontSize="Large"
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Entry Text="{Binding SearchTerm}" Placeholder="Search by name..."/>
+            <ListView ItemsSource="{Binding AllPeople}" HasUnevenRows="True" 
+                      SeparatorVisibility="Default" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="10,10">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding FirstName}" FontSize="Medium" FontAttributes="Bold"/>
+                                    <Label Text="{Binding SurName}" FontSize="Medium" FontAttributes="Bold"/>
+                                </StackLayout>
+                                <Label Text="{Binding DateofBirth}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="btnAddPerson" Text="Add Person" 
+                    BackgroundColor="green" Clicked="btnAddPerson_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

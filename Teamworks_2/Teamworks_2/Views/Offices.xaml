@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+    x:Class="Teamworks_2.Views.Offices"
+ >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Office List"
+                   FontAttributes="Bold" FontSize="Large"
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+
+            <Entry Text="{Binding SearchTerm}" Placeholder="Search by name or location..."/>
+            
+            <!--<CollectionView x:Name="OfficesView" ItemsSource="{Binding AllOffices}" SelectionMode="Single" SelectedItem="{Binding SelectedOffice}" SelectionChanged="OfficesView_SelectionChanged">
+                <CollectionView.EmptyView>
+                    <Label Text="No Offices found" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="10" Orientation="Vertical">
+                            <Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="235" HorizontalOptions="FillAndExpand" />
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Name}" TextColor="#Black" FontSize="14" FontAttributes="Bold"/>
+                                    <Label Text="per hour" TextColor="Gray" FontSize="10"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Price}" TextColor="#005AD4" FontSize="24"/>
+                                    <Label Text="per hour" TextColor="Gray" FontSize="10"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>-->
+            <ListView  x:Name="OfficesView" ItemsSource="{Binding AllOffices}" HasUnevenRows="True" 
+                      SeparatorVisibility="Default" ItemSelected="OfficesView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="10,10">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Name}" FontSize="Small" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Location}" FontSize="Small" FontAttributes="None"/>
+                                        <Label Text="{Binding NumGuests}" FontSize="Small" FontAttributes="None"/>
+                                        <Label Text="{Binding Sqft}" FontSize="Small" FontAttributes="None"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Hourly}" FontSize="Small" FontAttributes="None"/>
+                                        <Label Text="per Hour" FontSize="Small" FontAttributes="None"/>
+                                    </StackLayout>
+                               </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

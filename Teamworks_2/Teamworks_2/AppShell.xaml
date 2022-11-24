@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:Teamworks_2.Views"
+    x:Class="Teamworks_2.AppShell">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="White" />
+                <Setter Property="Shell.ForegroundColor" Value="{DynamicResource Primary}" />
+                <Setter Property="Shell.TitleColor" Value="#005AD4" />
+                <Setter Property="Shell.DisabledColor" Value="Gray" />
+                <Setter Property="Shell.UnselectedColor" Value="black" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="white" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{DynamicResource Primary}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="black"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource Primary}"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Title="SignIn" Route="Login" ContentTemplate="{DataTemplate view:SignIn}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Title="Offices"  Icon="icon_offices_png" ContentTemplate="{DataTemplate view:Offices}" />
+        <ShellContent Title="Bookings" Icon="TeamWorks_Black.png" ContentTemplate="{DataTemplate view:Bookings}" />
+        <ShellContent Title="Profile" Route="Home"  Icon="icon_user.png" ContentTemplate="{DataTemplate view:SignIn}" />
+
+    </TabBar>
+
+
+</Shell>
+

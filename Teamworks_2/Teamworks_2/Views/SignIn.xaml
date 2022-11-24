@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teamworks_2.Views.SignIn"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Image Source="Teamworks.png" HeightRequest="100"/>
+            <Label Text="Teamworks"
+                VerticalOptions="StartAndExpand"  FontAttributes="Bold" FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="#005AD4"
+                />
+            <Label Text="Executive Offices"
+                VerticalOptions="StartAndExpand"  FontAttributes="Bold" FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="#005AD4"
+                />
+
+            <TableView HasUnevenRows="True" Margin="0,50">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout Spacing="10">
+                                <Label Text="Email" TextColor="#005AD4" FontSize="Medium" />
+                                <Entry Text="{Binding UEmail}" Placeholder="Email" TextColor="Green" FontSize="Medium" />
+
+                                <Label Text="Password" TextColor="#005AD4" FontSize="Medium" />
+                                <Entry Text="{Binding UPassword}" Placeholder="Password" TextColor="Green" FontSize="Medium" IsPassword="True"/>
+
+                                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Button x:Name="btnLogIn" Text="LogIn" Clicked="btnLogIn_Clicked"
+                                        Style="{StaticResource positiveStyle}" CornerRadius="30"/>
+                                    <Button x:Name="btnRegister" Text="Register" Clicked="btnRegister_Clicked"
+                                        Style="{StaticResource neutralStyle}" CornerRadius="30"/>
+                                </StackLayout>-->
+                                <StackLayout Orientation="Vertical" Padding="0, 100, 0, 0">
+                                    <Button x:Name="btnLogIn" Text="LogIn" Clicked="btnLogIn_Clicked"
+                                        Style="{StaticResource mainStyle}"/>
+                                    <Button x:Name="btnRegister" Text="Register" Clicked="btnRegister_Clicked"
+                                        Style="{StaticResource mainStyle}"/>
+                                </StackLayout>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
