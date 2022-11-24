@@ -21,7 +21,7 @@
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
-
+<!--this is the navigation-->
     <TabBar>
         <ShellContent Title="SignIn" Route="Login" ContentTemplate="{DataTemplate view:SignIn}" />
     </TabBar>
