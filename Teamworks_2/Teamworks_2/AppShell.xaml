@@ -23,15 +23,16 @@
     </Shell.Resources>
 <!--this is the navigation-->
 <!--Dennis was here-->
+<!--Dennis was here 2222-->
+
     <TabBar>
         <ShellContent Title="SignIn" Route="Login" ContentTemplate="{DataTemplate view:SignIn}" />
     </TabBar>
 
     <TabBar>
-        <ShellContent Title="Offices"  Icon="icon_offices_png" ContentTemplate="{DataTemplate view:Offices}" />
+        <ShellContent Title="Offices"  Icon="icon_offices.png" ContentTemplate="{DataTemplate view:Offices}" />
         <ShellContent Title="Bookings" Icon="TeamWorks_Black.png" ContentTemplate="{DataTemplate view:Bookings}" />
-        <ShellContent Title="Profile" Route="Home"  Icon="icon_user.png" ContentTemplate="{DataTemplate view:SignIn}" />
-
+        <ShellContent Title="Profile" Route="Home"  Icon="icon_user.png" ContentTemplate="{DataTemplate view:Profile}" />
     </TabBar>
 
 
