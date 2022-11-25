@@ -25,7 +25,7 @@
                                 <Entry Text="{Binding UPhoneNo}" Placeholder="Phone Number" TextColor="Green" FontSize="Medium" IsPassword="True"/>
                                
                                 <StackLayout Orientation="Vertical" Padding="0, 100, 0, 0">
-                                    <!--Have to scroll down to see save button-->
+                                    <!--Have to scroll down to see save butttttton-->
                                     <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"
                                         Style="{StaticResource mainStyle}"/>
                                 </StackLayout>
