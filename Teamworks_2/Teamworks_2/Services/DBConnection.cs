@@ -8,7 +8,7 @@ namespace Teamworks_2.Services
     public static class DBConnection
     {
         // Declare the Database Name
-        public const string DatabaseFilename = "Database.db3";
+        public const string DatabaseFilename = "Database2.db3";
 
         // Set The DB Initialisation Flags i.e. what can be done with the database
         public const SQLite.SQLiteOpenFlags Flags =

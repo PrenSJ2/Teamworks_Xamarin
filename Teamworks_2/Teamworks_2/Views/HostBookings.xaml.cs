@@ -7,24 +7,24 @@ using Xamarin.Forms.Xaml;
 namespace Teamworks_2.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Bookings : ContentPage
+    public partial class HostBookings : ContentPage
     {
-        ViewModels.BookingsVM bookingsvm;
+        ViewModels.HostBookingsVM hostbookingsvm;
 
         App globalref = (App)Application.Current;
 
-        public Bookings()
+        public HostBookings()
         {
             InitializeComponent();
 
-            bookingsvm = new ViewModels.BookingsVM();
-            BindingContext = bookingsvm;
+            hostbookingsvm = new ViewModels.HostBookingsVM();
+            BindingContext = hostbookingsvm;
         }
 
         protected override void OnAppearing()
         {
-            bookingsvm = new ViewModels.BookingsVM();
-            BindingContext = bookingsvm;
+            hostbookingsvm = new ViewModels.HostBookingsVM();
+            BindingContext = hostbookingsvm;
         }
 
 
@@ -34,12 +34,12 @@ namespace Teamworks_2.Views
             return true;
         }
 
-        private async void ListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        async void ListView_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            if(e.SelectedItem != null)
+            if (e.SelectedItem != null)
             {
                 globalref.SelectedBooking = e.SelectedItem as Models.Booking;
-                await Shell.Current.GoToAsync("BookingDetails");
+                await Shell.Current.GoToAsync("HostBookingDetails");
             }
         }
     }

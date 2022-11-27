@@ -20,10 +20,10 @@ namespace Teamworks_2
         public Models.User ActiveUser;
         public Models.Office SelectedOffice;
         public Models.Booking SelectedBooking;
+        public Models.Booking TempBooking;
         public Models.Addon SelectedAddon;
 
         public bool isHostLoggedIn { get; set; }
-        public bool isGuestLoggedIn { get; set; }
 
         protected override void OnStart ()
         {

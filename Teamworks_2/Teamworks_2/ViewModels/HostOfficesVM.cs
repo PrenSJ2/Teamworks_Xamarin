@@ -7,12 +7,12 @@ using Xamarin.Forms;
 
 namespace Teamworks_2.ViewModels
 {
-    public class OfficesVM : INotifyPropertyChanged
+    public class HostOfficesVM : INotifyPropertyChanged
     {
         Services.Database newDBInstance;
         App globalref = (App)Application.Current;
 
-        public OfficesVM()
+        public HostOfficesVM()
         {
             // Create an instance of the DB Class
             newDBInstance = new Services.Database();
@@ -20,7 +20,7 @@ namespace Teamworks_2.ViewModels
             //Creating a Dummy Office
 
             //Models.Office dummyoffice = new Models.Office();
-            //dummyoffice.Name = "Modern Conference Room 2";
+            //dummyoffice.Name = "Modern Conference Room";
             //dummyoffice.Location = "Central San Mateo, CA";
             //dummyoffice.NumGuests = "15 people";
             //dummyoffice.Sqft = "700 sqft";
@@ -29,14 +29,13 @@ namespace Teamworks_2.ViewModels
             //dummyoffice.Amenities = "Wifi, TV, Tables";
             //dummyoffice.Features = "Restrooms, Breakout Space, Parking";
             //dummyoffice.Image = "Modern_Large.jpeg";
-            //dummyoffice.UID = globalref.ActiveUser.UID;
+
             //newDBInstance.AddOffice(dummyoffice);
 
             // Load from DB into attribute
             AllOffices = newDBInstance.GetAllOffices();
 
         }
-
         public Models.Office SelectedOffice { get; set; }
 
         private ObservableCollection<Models.Office> alloffices;

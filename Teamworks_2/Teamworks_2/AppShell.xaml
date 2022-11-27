@@ -8,14 +8,14 @@
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="White" />
-                <Setter Property="Shell.ForegroundColor" Value="{DynamicResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.TitleColor" Value="#005AD4" />
                 <Setter Property="Shell.DisabledColor" Value="Gray" />
                 <Setter Property="Shell.UnselectedColor" Value="black" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="white" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="{DynamicResource Primary}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource Primary}"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="black"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource Primary}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#005AD4"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
@@ -30,11 +30,16 @@
     </TabBar>
 
     <TabBar>
-        <ShellContent Title="Offices"  Icon="icon_offices.png" ContentTemplate="{DataTemplate view:Offices}" />
+        <ShellContent Title="Offices" Route="Home" Icon="icon_offices.png" ContentTemplate="{DataTemplate view:Offices}" />
         <ShellContent Title="Bookings" Icon="TeamWorks_Black.png" ContentTemplate="{DataTemplate view:Bookings}" />
-        <ShellContent Title="Profile" Route="Home"  Icon="icon_user.png" ContentTemplate="{DataTemplate view:Profile}" />
+        <ShellContent Title="Profile"   Icon="icon_user.png" ContentTemplate="{DataTemplate view:Profile}" />
     </TabBar>
 
+    <TabBar>
+        <ShellContent Title="My Offices" Route="HostHome" Icon="icon_offices.png" ContentTemplate="{DataTemplate view:HostOffices}" />
+        <ShellContent Title="Guest Bookings" Icon="TeamWorks_Black.png" ContentTemplate="{DataTemplate view:HostBookings}" />
+        <ShellContent Title="Profile"   Icon="icon_user.png" ContentTemplate="{DataTemplate view:Profile}" />
+    </TabBar>
 
 </Shell>
 

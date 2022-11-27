@@ -3,9 +3,13 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     NavigationPage.HasNavigationBar="False"
-    Title="Offices"
-    x:Class="Teamworks_2.Views.Offices"
+    Title="My Offices"
+    x:Class="Teamworks_2.Views.HostOffices"
  >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <!--<Label Text="Office List"
@@ -15,7 +19,7 @@
 
             <Entry Text="{Binding SearchTerm}" Placeholder="Search by name or location..."/>
             
-            <CollectionView x:Name="OfficesView" ItemsSource="{Binding AllOffices}" SelectionMode="Single" SelectedItem="{Binding SelectedOffice}" SelectionChanged="OfficesView_SelectionChanged">
+            <CollectionView x:Name="HostOfficesView" ItemsSource="{Binding AllOffices}" SelectionMode="Single" SelectedItem="{Binding SelectedOffice}" SelectionChanged="OfficesView_SelectionChanged">
                 <CollectionView.EmptyView>
                     <Label Text="No Offices found" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
                     </CollectionView.EmptyView>

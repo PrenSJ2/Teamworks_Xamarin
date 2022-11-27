@@ -12,5 +12,8 @@ namespace Teamworks_2.Models
         public int Quantity { get; set; }
         public double Price { get; set; }
         public string ImgName { get; set; }
+
+        // link to Office by ID
+        public int OID { get; set; }
     }
 }

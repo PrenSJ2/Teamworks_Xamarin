@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False"
+    Title="Edit Office"
+    x:Class="Teamworks_2.Views.EditOffice">
+    <ContentPage.Content>
+         <StackLayout Padding="20">
+            <TableView HasUnevenRows="True" Margin="0,50">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout Spacing="10">
+
+                                <Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="235" HorizontalOptions="FillAndExpand" />
+
+                                <Label Text="Office Name" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding Office_name}" Placeholder="Office Name" TextColor="Green" FontSize="Medium" />
+
+                                <Label Text="Location" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding Location}" Placeholder="Location" TextColor="Green" FontSize="Medium" />
+
+                                <Label Text="Number of Guests" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding Num_guests}" Placeholder="Number of Guests" TextColor="Green" FontSize="Medium" />
+
+                                <Label Text="Size(sqft)" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding Sqft}" Placeholder="Size(sqft)" TextColor="Green" FontSize="Medium" />
+
+                                <Label Text="Description" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding Description}" Placeholder="Description" TextColor="Green" FontSize="Medium"/>
+
+                                <Label Text="Price (per hour)" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding PricePerhour}" Placeholder="Price (per hour)" TextColor="Green" FontSize="Medium"/>
+
+                                <Label Text="Minimum Hours" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding MinHours}" Placeholder="Minimum Hours" TextColor="Green" FontSize="Medium"/>
+
+                                <Label Text="Amenities" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding Amenities}" Placeholder="Amenities" TextColor="Green" FontSize="Medium"/>
+
+                                <Label Text="Features" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding Features}" Placeholder="Features" TextColor="Green" FontSize="Medium"/>
+
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"
+                                        Style="{StaticResource mainStyle}" />
+                                    <Button x:Name="btnCancel" Text="Cancel" Clicked="btnCancel_Clicked"
+                                        Style="{StaticResource mainStyle}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

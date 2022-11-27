@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using Xamarin.Forms;
@@ -8,9 +9,31 @@ namespace Teamworks_2.ViewModels
 {
 	public class ProfileVM : INotifyPropertyChanged
     {
-        Services.Database DBInstance;
+        Services.Database newDBInstance;
 
         App globalref = (App)Application.Current;
+
+        public ProfileVM()
+        {
+            LoadUser();
+        }
+
+        //private Models.User thisuser;
+
+        //public Models.User Thisuser
+        //{
+        //    get
+        //    {
+        //        return thisuser;
+        //    }
+        //    set
+        //    {
+        //        thisuser = value;
+        //        OnPropertyChanged("Thisuser");
+        //    }
+        //}
+
+        private int userid { get; set; }
 
         private string uFirstName;
         public string UFirstName
@@ -40,21 +63,6 @@ namespace Teamworks_2.ViewModels
             }
         }
 
-        private string pEmail;
-        public string PEmail
-        {
-            get
-            {
-                return pEmail;
-            }
-            set
-            {
-                pEmail = value;
-                OnPropertyChanged("PEmail");
-                ValidateUserEmail();
-            }
-        }
-
         private string uPhoneNo;
         public string UPhoneNo
         {
@@ -66,6 +74,20 @@ namespace Teamworks_2.ViewModels
             {
                 uPhoneNo = value;
                 OnPropertyChanged("PEmail");
+            }
+        }
+
+        private string uEmail;
+        public string UEmail
+        {
+            get
+            {
+                return uEmail;
+            }
+            set
+            {
+                uEmail = value;
+                OnPropertyChanged("UEmail");
             }
         }
 
@@ -97,10 +119,24 @@ namespace Teamworks_2.ViewModels
             }
         }
 
+        private string uPassword;
+        public string UPassword
+        {
+            get
+            {
+                return uPassword;
+            }
+            set
+            {
+                uPassword = value;
+                OnPropertyChanged("UPassword");
+            }
+        }
+
         public void ValidateUserEmail()
         {
             // validate the username
-            var trimmedEmail = pEmail.Trim();
+            var trimmedEmail = UEmail.Trim();
 
             if (trimmedEmail.EndsWith("."))
             {
@@ -116,14 +152,41 @@ namespace Teamworks_2.ViewModels
             }
         }
 
-        public int SaveUser()
+        public void LoadUser()
         {
-            int addstatus = 0;
+            // get the selected user by activeuser Id
+            //int uid = globalref.ActiveUser.UID;
+
+            //Models.User selectedUser = newDBInstance.GetUserByID(uid);
+            Models.User selectedUser = globalref.ActiveUser;
+            userid = selectedUser.UID;
+            UFirstName = selectedUser.First_name;
+            ULastName = selectedUser.Last_name;
+            UEmail = selectedUser.Email;
+            UPhoneNo = selectedUser.Phone_number;
+            UPassword = selectedUser.Password;
+            if (selectedUser.isHost)
+            {
+                UisHost = "True";
+            }
+            else
+            {
+                UisHost = "False";
+            }
+            ValidateUserEmail();
+
+        }
+
+        public void UpdateUser()
+        {
             Models.User newuser = new Models.User();
+
+            newuser.UID = userid;
             newuser.First_name = UFirstName;
             newuser.Last_name = ULastName;
-            newuser.Email = pEmail;
+            newuser.Email = UEmail;
             newuser.Phone_number = UPhoneNo;
+            newuser.Password = UPassword;
             if (UisHost == "True")
             {
                 newuser.isHost = true;
@@ -133,15 +196,12 @@ namespace Teamworks_2.ViewModels
                 newuser.isHost = false;
             }
 
-
-
-
+            newDBInstance = new Services.Database();
             if (ValidEmail == "Green")
             {
-                addstatus = DBInstance.AddUser(newuser);
+                newDBInstance.UpdateUser(newuser);
             }
-
-            return addstatus;
+            
         }
 
 

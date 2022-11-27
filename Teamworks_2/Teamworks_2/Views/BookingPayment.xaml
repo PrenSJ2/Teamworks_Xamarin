@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    x:Class="Teamworks_2.Views.BookingPayment"
+    Title="{Binding BookingOffice.Name}"
+    >
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout Spacing="10">
+                <Label Text="Booking Payment" TextColor="#005AD4" FontSize="Large" FontAttributes="Bold"/>
+                <Label Text="{Binding BookingOffice.Name}" FontSize="Medium" FontAttributes="Bold" TextColor="#005AD4"/>
+                <Label Text="{Binding BookingOffice.Location}" FontSize="Small"  TextColor="#005AD4"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding ThisBooking.NumGuests}" FontSize="Small" TextColor="#005AD4" />
+                    <Label Text="people" FontSize="Small" TextColor="#005AD4" />
+                </StackLayout>
+                <Label Text="{Binding TimePeriod}" FontSize="Small" TextColor="#005AD4" />
+                   
+                <!--Price-->
+                <Label Text="Price" TextColor="#005AD4" FontSize="Medium" FontAttributes="Bold"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                    <Label Text="Space Rental" TextColor="#005AD4" FontSize="Medium" />
+                    <Label Text="$"  TextColor="#005AD4" FontSize="Medium" />
+                    <Label Text="{Binding UOfficePrice}"  TextColor="#005AD4" FontSize="Medium" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                    <Label Text="Service Fee" TextColor="#005AD4" FontSize="Medium" />
+                    <Label Text="$"  TextColor="#005AD4" FontSize="Medium" />
+
+                    <Label Text="{Binding UServiceFee}"  TextColor="#005AD4" FontSize="Medium" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                    <Label Text="Total" TextColor="#005AD4" FontSize="Medium" FontAttributes="Bold"/>
+                    <Label Text="$"  TextColor="#005AD4" FontSize="Medium" FontAttributes="Bold"/>
+
+                    <Label Text="{Binding UFinalPrice}"  TextColor="#005AD4" FontSize="Medium" />
+                </StackLayout>
+
+                <!--Card Details Functionality to added -->
+                <!--<Label Text="Payment Info" TextColor="#005AD4" FontSize="Medium" FontAttributes="Bold"/>
+
+                <Label Text="Card Holder" TextColor="#005AD4" FontSize="Medium"  FontAttributes="Bold"/>
+                <Entry Placeholder="Number of People" TextColor="Green" FontSize="Medium" />
+                                
+                <Label Text="Email Address" TextColor="#005AD4" FontSize="Medium" FontAttributes="Bold"/>
+                <Entry Placeholder="Email Address" TextColor="Green" FontSize="Medium" />
+
+                <Label Text="Card Details" TextColor="#005AD4" FontSize="Medium" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="5">
+                    <Entry Placeholder="Card Number" TextColor="Green" FontSize="Medium" />
+                    <Entry Placeholder="Expiry Date" TextColor="Green" FontSize="Medium" />
+                    <Entry Placeholder="CVC" TextColor="Green" FontSize="Medium" />
+                </StackLayout>
+
+                <Label Text="Billing Address" TextColor="#005AD4" FontSize="Medium" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="5">
+                    <Entry Placeholder="Card Number" TextColor="Green" FontSize="Medium" />
+                    <Entry Placeholder="Expiry Date" TextColor="Green" FontSize="Medium" />
+                    <Entry Placeholder="CVC" TextColor="Green" FontSize="Medium" />
+                </StackLayout>-->
+
+
+                <Button x:Name="Pay" Text="Pay / Create Booking" Clicked="Pay_Clicked" Style="{StaticResource mainStyle}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

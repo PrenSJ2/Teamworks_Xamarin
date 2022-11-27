@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Teamworks_2.Views.BookNow"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Spacing="10" >
+            <Image Source="{Binding CurrentOffice.Image}" Aspect="AspectFill" HeightRequest="235"/>
+            <StackLayout Padding="10, 10, 10, 10">
+                <StackLayout>
+                    <Label Text="{Binding CurrentOffice.Name}" FontSize="Medium" FontAttributes="Bold" TextColor="black"/>
+                    <Label Text="{Binding CurrentOffice.Location}" FontSize="Small"  TextColor="black"/>
+                    <Label Text="{Binding CurrentOffice.Sqft}" FontSize="Small" TextColor="black" />
+                    <Label Text="{Binding CurrentOffice.Description}" FontSize="Small" TextColor="black" />
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="$" TextColor="#005AD4" FontSize="30" FontAttributes="Bold"/>
+                            <Label Text="{Binding CurrentOffice.Hourly}" TextColor="#005AD4" FontSize="30" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <Label Text="/ hr" FontSize="Small"  TextColor="Black" />
+                    </StackLayout>
+
+                    <Label Text="{Binding CurrentOffice.minHours}" FontSize="Small" TextColor="Black" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="50">
+                    <StackLayout>
+                        <Label Text="Amenities" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
+                                    VerticalOptions="StartAndExpand" HorizontalOptions= "StartAndExpand" />
+                        <Label Text="{Binding CurrentOffice.Amenities}" FontSize="Small" FontAttributes="Bold" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Features" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
+                                    VerticalOptions="StartAndExpand" HorizontalOptions= "StartAndExpand" />
+                        <Label Text="{Binding CurrentOffice.Features}" FontSize="Small" FontAttributes="Bold" />
+                    </StackLayout>
+                </StackLayout>
+                <Button x:Name="btnBookNow" Text="Book Now" Clicked="btnBookNow_Clicked" Style="{StaticResource mainStyle}" Margin="0, 100, 0, 0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Booking Details"
+    NavigationPage.HasNavigationBar="False"
+    x:Class="Teamworks_2.Views.HostBookingDetails">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout Spacing="10">
+                <StackLayout Padding="10, 10, 10, 10">
+                    <Label Text="Guest Details" TextColor="black" FontSize="Medium" FontAttributes="Bold"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding BookedGuest.First_name}" FontSize="Small" FontAttributes="Bold" TextColor="black"/>
+                        <Label Text="{Binding BookedGuest.Last_name}" FontSize="Small" FontAttributes="Bold" TextColor="black"/>
+                    </StackLayout>
+                        <Label Text="{Binding BookedGuest.Email}" FontSize="Small"  TextColor="black"/>
+                        <Label Text="{Binding BookedGuest.Phone_number}" FontSize="Small"  TextColor="black"/>
+                    <Label Text="Office Details" TextColor="black" FontSize="Medium" FontAttributes="Bold"/>
+                
+                    <StackLayout>
+                        <Label Text="{Binding CurrentOffice.Name}" FontSize="Small" FontAttributes="Bold" TextColor="black"/>
+                        <Label Text="{Binding CurrentOffice.Location}" FontSize="Small"  TextColor="black"/>
+                    </StackLayout>
+                    
+
+                    <Label Text="Booking Info" TextColor="black" FontSize="Medium" FontAttributes="Bold"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Booking Purpose:" TextColor="black" FontSize="Small" />
+                        <Label Text="{Binding CurrentBooking.Activity}"  TextColor="black" FontSize="Small" />
+                    </StackLayout>
+                     <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Booking Period:" TextColor="black" FontSize="Small" />
+                        <Label Text="{Binding CurrentBooking.TimePeriod}"  TextColor="black" FontSize="Small" />
+                    </StackLayout>               
+
+                    <Label Text="Price" TextColor="black" FontSize="Medium" FontAttributes="Bold"/>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Space Rental" TextColor="black" FontSize="Small" />
+                        <Label Text="$"  TextColor="black" FontSize="Small" />
+                        <Label Text="{Binding CurrentBooking.OfficePrice}"  TextColor="black" FontSize="Small" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Service Fee" TextColor="black" FontSize="Small" />
+                        <Label Text="$"  TextColor="black" FontSize="Small" />
+
+                        <Label Text="{Binding CurrentBooking.ServiceFee}"  TextColor="black" FontSize="Small" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Total" TextColor="black" FontSize="Small" FontAttributes="Bold"/>
+                        <Label Text="$"  TextColor="black" FontSize="Small" FontAttributes="Bold"/>
+
+                        <Label Text="{Binding CurrentBooking.FinalPrice}"  TextColor="black" FontSize="Small" FontAttributes="Bold"/>
+                </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

@@ -4,6 +4,7 @@
              x:Class="Teamworks_2.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Color x:Key="Primary">#005AD4</Color>
             <Style x:Key="positiveStyle" TargetType="Button">
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="BackgroundColor" Value="Green"/>

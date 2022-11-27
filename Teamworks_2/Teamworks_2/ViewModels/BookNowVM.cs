@@ -8,35 +8,44 @@ using Xamarin.Forms;
 
 namespace Teamworks_2.ViewModels
 {
-    public class BookingsVM
+    public class BookNowVM
     {
         Services.Database newDBInstance;
         App globalref = (App)Application.Current;
 
-        public BookingsVM()
+        public BookNowVM()
         {
             // Create an instance of the DB Class
             newDBInstance = new Services.Database();
 
             // Load from DB into attribute
-            AllBookings = newDBInstance.GetAllBookings(globalref.ActiveUser.UID);
+            //CurrentOffice = newDBInstance.GetOfficeByID(globalref.SelectedOffice.OID);
+            CurrentOffice = globalref.SelectedOffice;
+           
 
         }
 
-        private ObservableCollection<Models.Booking> allbookings;
+        private Models.Office currentoffice;
 
-        public ObservableCollection<Models.Booking> AllBookings
+        public Models.Office CurrentOffice
         {
             get
             {
-                return allbookings;
+                return currentoffice;
             }
             set
             {
-                allbookings = value;
-                OnPropertyChanged("AllBookings");
+                currentoffice = value;
+                OnPropertyChanged("CurrentOffice");
             }
         }
+
+
+        //private void LoadOffice()
+        //{
+            
+        //}
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyname)
         {
@@ -48,4 +57,3 @@ namespace Teamworks_2.ViewModels
         }
     }
 }
-

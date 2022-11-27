@@ -8,18 +8,18 @@ using Xamarin.Forms;
 
 namespace Teamworks_2.ViewModels
 {
-    public class BookingsVM
+    public class HostBookingsVM
     {
         Services.Database newDBInstance;
         App globalref = (App)Application.Current;
 
-        public BookingsVM()
+        public HostBookingsVM()
         {
             // Create an instance of the DB Class
             newDBInstance = new Services.Database();
 
             // Load from DB into attribute
-            AllBookings = newDBInstance.GetAllBookings(globalref.ActiveUser.UID);
+            AllBookings = newDBInstance.GetAllHostBookings(globalref.ActiveUser.UID);
 
         }
 
@@ -37,6 +37,7 @@ namespace Teamworks_2.ViewModels
                 OnPropertyChanged("AllBookings");
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyname)
         {

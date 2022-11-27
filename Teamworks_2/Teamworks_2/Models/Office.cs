@@ -14,13 +14,14 @@ namespace Teamworks_2.Models
         public string NumGuests { get; set; }
         public string Sqft { get; set; }
         public string Description { get; set; }
-        public string Hourly { get; set; }
+        public double Hourly { get; set; }
         public string MinHours { get; set; }
         public string Amenities { get; set; }
         public string Features { get; set; }
         public string Image { get; set; }
 
-        // list of addons ... foregin key to addons
+        // link Office to Host
+        public int UID { get; set; }
     }
 }
 

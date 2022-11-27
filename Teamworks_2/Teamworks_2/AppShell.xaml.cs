@@ -11,7 +11,16 @@ namespace Teamworks_2
         public AppShell()
         {
             InitializeComponent();
-            //Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
+            Routing.RegisterRoute(nameof(BookNow), typeof(BookNow));
+            Routing.RegisterRoute(nameof(BookingInfo), typeof(BookingInfo));
+            Routing.RegisterRoute(nameof(BookingPayment), typeof(BookingPayment));
+            Routing.RegisterRoute(nameof(AddOffice), typeof(AddOffice));
+            Routing.RegisterRoute(nameof(EditOffice), typeof(EditOffice));
+            Routing.RegisterRoute(nameof(BookingDetails), typeof(BookingDetails));
+            Routing.RegisterRoute(nameof(HostBookingDetails), typeof(HostBookingDetails));
+
+
+
             //Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 

@@ -14,6 +14,8 @@ namespace Teamworks_2.Views
     {
         ViewModels.SignInVM signinViewModel;
 
+        App globalref = (App)Application.Current;
+
         public SignIn()
         {
             InitializeComponent();
@@ -30,8 +32,16 @@ namespace Teamworks_2.Views
 
             if (validstatus)
             {
-                await DisplayAlert("Authentication Successful", "Login Details Correct", "OK");
-                await Shell.Current.GoToAsync("//Home");
+                if (globalref.isHostLoggedIn)
+                {
+                    await Shell.Current.GoToAsync("//HostHome");
+                }
+                else
+                {
+                    await Shell.Current.GoToAsync("//Home");
+                }
+                //await DisplayAlert("Authentication Successful", "Login Details Correct", "OK");
+                
             }
             else
             {

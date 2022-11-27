@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Text;
 
 namespace Teamworks_2.Services
@@ -35,10 +36,11 @@ namespace Teamworks_2.Services
         }
 
         // DB Utility Functions
-        // Insert a new User
-        public int
 
-            AddUser(Models.User user)
+        // USERS
+
+        // Insert a new User
+        public int AddUser(Models.User user)
         {
             int insertstatus = 0;
             try
@@ -52,6 +54,24 @@ namespace Teamworks_2.Services
             }
 
             return insertstatus;
+        }
+
+        // Update a User
+        public int UpdateUser(Models.User user)
+        {
+            int updatestatus = DatabaseConnection.Update(user);
+            return updatestatus;
+        }
+
+        // Return a User based on The UserID
+        public Models.User GetUserByID(int uid)
+        {
+
+            // Query to return a persons in the DB by ID
+            var user = DatabaseConnection.Table<Models.User>()
+                            .Where(usr => usr.UID == uid)
+                            .FirstOrDefault();
+            return user;
         }
 
         public bool ValidateUsername(string username)
@@ -82,6 +102,8 @@ namespace Teamworks_2.Services
 
             return founduser;
         }
+
+        // OFFICES
 
         // Insert a new Office
         public int AddOffice(Models.Office office)
@@ -119,7 +141,7 @@ namespace Teamworks_2.Services
         }
 
         // Return ALL Offices per Signed In User
-        //public ObservableCollection<Office> GetAllOffices(int userid)
+        //public ObservableCollection<Office> GetAllHostOffices(int uid)
         //{
         //    ObservableCollection<Office> offices;
 
@@ -195,19 +217,33 @@ namespace Teamworks_2.Services
             return bookings;
         }
 
+        // Return ALL Host bookings
+        public ObservableCollection<Models.Booking> GetAllHostBookings(int hid)
+        {
+            ObservableCollection<Models.Booking> bookings;
+
+            // Query to return all persons in the DB
+            var allbookings = DatabaseConnection.Table<Models.Booking>()
+                .Where(book => book.HID == hid)
+                .ToList();
+            bookings = new ObservableCollection<Models.Booking>(allbookings);
+            return bookings;
+        }
 
 
-        //// Return a Office based on The Location or Name
-        //public ObservableCollection<Booking> GetBookingByQuery(string oquery)
-        //{
-        //    ObservableCollection<Booking> booking;
-        //    string getbookingquery = "SELECT * FROM Booking WHERE Location LIKE '%" + oquery + "%' OR Name LIKE '%" + oquery + "%'";
+        // Return a Booking based on The Location or Name
+        public ObservableCollection<Models.Booking> GetBookingByQuery(string oquery)
+        {
+            ObservableCollection<Models.Booking> booking;
+            string getbookingquery = "SELECT * FROM Booking WHERE Location LIKE '%" + oquery + "%' OR Name LIKE '%" + oquery + "%'";
 
-        //    // Query to return all booking in the DB
-        //    var getbooking = DatabaseConnection.Query<Booking>(getbookingquery);
-        //    booking = new ObservableCollection<Booking>(getbooking);
-        //    return booking;
-        //}
+            // Query to return all booking in the DB
+            var getbooking = DatabaseConnection.Query<Models.Booking>(getbookingquery);
+            booking = new ObservableCollection<Models.Booking>(getbooking);
+            return booking;
+        }
+
+
     }
 }
 

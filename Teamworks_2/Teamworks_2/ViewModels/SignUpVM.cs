@@ -52,6 +52,20 @@ namespace Teamworks_2.ViewModels
             }
         }
 
+        private string uPhoneNo;
+        public string UPhoneNo
+        {
+            get
+            {
+                return uPhoneNo;
+            }
+            set
+            {
+                uPhoneNo = value;
+                OnPropertyChanged("UPhoneNo");
+            }
+        }
+
         private string uPassword;
         public string UPassword
         {
@@ -122,6 +136,7 @@ namespace Teamworks_2.ViewModels
             newuser.First_name = UFirst_name;
             newuser.Last_name = ULast_name;
             newuser.Email = UEmail;
+            newuser.Phone_number = UPhoneNo;
             newuser.Password = UPassword;
             if (UisHost == "True")
             {

@@ -1,0 +1,191 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Text;
+using Teamworks_2;
+using Xamarin.Forms;
+
+namespace Teamworks_2.ViewModels
+{
+    public class AddOfficeVM : INotifyPropertyChanged
+    {
+        Services.Database DBInstance = new Services.Database();
+        App globalref = (App)Application.Current;
+
+
+        private string office_name;
+        public string Office_name
+        {
+            get
+            {
+                return office_name;
+            }
+            set
+            {
+                office_name = value;
+                OnPropertyChanged("Office_name");
+            }
+        }
+
+        private string location;
+        public string Location
+        {
+            get
+            {
+                return location;
+            }
+            set
+            {
+                location = value;
+                OnPropertyChanged("Location");
+            }
+        }
+
+        private string num_guests;
+        public string Num_guests
+        {
+            get
+            {
+                return num_guests;
+            }
+            set
+            {
+                num_guests = value;
+                OnPropertyChanged("Num_guests");
+            }
+        }
+
+        private string sqft;
+        public string Sqft
+        {
+            get
+            {
+                return sqft;
+            }
+            set
+            {
+                sqft = value;
+                OnPropertyChanged("Sqft");
+            }
+        }
+
+        private string description;
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+                OnPropertyChanged("Description");
+            }
+        }
+
+        private double pricePerhour;
+        public double PricePerhour
+        {
+            get
+            {
+                return pricePerhour;
+            }
+            set
+            {
+                pricePerhour = value;
+                OnPropertyChanged("PricePerhour");
+            }
+        }
+
+        private string minHours;
+        public string MinHours
+        {
+            get
+            {
+                return minHours;
+            }
+            set
+            {
+                minHours = value;
+                OnPropertyChanged("MinHours");
+            }
+        }
+
+
+        private string amenities;
+        public string Amenities
+        {
+            get
+            {
+                return amenities;
+            }
+            set
+            {
+                amenities = value;
+                OnPropertyChanged("Amenities");
+            }
+        }
+
+        private string features;
+        public string Features
+        {
+            get
+            {
+                return features;
+            }
+            set
+            {
+                features = value;
+                OnPropertyChanged("Features");
+            }
+        }
+
+        // double check for image
+        private string image;
+        public string Image
+        {
+            get
+            {
+                return image;
+            }
+            set
+            {
+                image = value;
+                OnPropertyChanged("Image");
+            }
+        }
+
+        public int SaveOffice()
+        {
+            int addstatus = 0;
+            Models.Office newoffice = new Models.Office();
+            newoffice.Name = Office_name;
+            newoffice.Location = Location;
+            newoffice.NumGuests = Num_guests;
+            newoffice.Sqft = Sqft;
+            newoffice.Description = Description;
+            newoffice.Hourly = PricePerhour;
+            newoffice.MinHours = MinHours;
+            newoffice.Amenities = Amenities;
+            newoffice.Features = Features;
+            newoffice.Image = Image;
+            newoffice.UID = globalref.ActiveUser.UID;
+
+            addstatus = DBInstance.AddOffice(newoffice);
+
+            return addstatus;
+
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propertyname)
+        {
+            var changed = PropertyChanged;
+            if (changed != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
+            }
+        }
+    }
+}
+

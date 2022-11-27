@@ -4,10 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     NavigationPage.HasNavigationBar="False"
     Title="Bookings"
-    x:Class="Teamworks_2.Views.Bookings">
+    x:Class="Teamworks_2.Views.HostBookings">
 <ContentPage.Content>
         <StackLayout>
-
             <ListView ItemsSource="{Binding AllBookings}" HasUnevenRows="True" 
                       SeparatorVisibility="Default" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
@@ -16,6 +15,7 @@
                             <StackLayout Margin="10,10">
                                 <StackLayout Orientation="Horizontal">
                                     <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding GName}" FontSize="Small" FontAttributes="Bold"/>
                                         <Label Text="{Binding OName}" FontSize="Small" FontAttributes="Bold"/>
                                         <Label Text="{Binding OLocation}" FontSize="Small" FontAttributes="None"/>
                                         <StackLayout Orientation="Horizontal">

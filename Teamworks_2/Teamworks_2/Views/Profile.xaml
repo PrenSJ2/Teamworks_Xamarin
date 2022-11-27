@@ -2,39 +2,42 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Teamworks_2.Views.Profile"
-             NavigationPage.HasNavigationBar="False" >
+             Title="Profile"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sign Out" Clicked="btnLogout_Clicked" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-    <StackLayout Padding="20">
-            <Image Source="profilePic.png" HeightRequest="100"/>
-
-            <TableView HasUnevenRows="True" Margin="0,50">
-                <TableRoot>
-                    <TableSection>
-                        <ViewCell>
-                            <StackLayout Spacing="10">
-                                <Label Text="First Name" TextColor="#005AD4" FontSize="Medium" />
-                                <Entry Text="{Binding UFirstName}" Placeholder="First Name" TextColor="Green" FontSize="Medium" />
+        <StackLayout Padding="20">
+            <!--<Image Source="profilePic.png" HeightRequest="100"/>-->
+            <StackLayout Spacing="10">
+                <Label Text="First Name" TextColor="#005AD4" FontSize="Medium" />
+                <Entry Text="{Binding UFirstName}" Placeholder="First Name" TextColor="Green" FontSize="Medium" />
                                 
-                                <Label Text="Last Name" TextColor="#005AD4" FontSize="Medium" />
-                                <Entry Text="{Binding ULastName}" Placeholder="Last Name" TextColor="Green" FontSize="Medium" />
+                <Label Text="Last Name" TextColor="#005AD4" FontSize="Medium" />
+                <Entry Text="{Binding ULastName}" Placeholder="Last Name" TextColor="Green" FontSize="Medium" />
 
-                                <Label Text="Email" TextColor="#005AD4" FontSize="Medium" />
-                                <Entry Text="{Binding PEmail}" Placeholder="Email" TextColor="Green" FontSize="Medium" IsPassword="True"/>
+                <Label Text="Email" TextColor="#005AD4" FontSize="Medium" />
+                <Entry Text="{Binding UEmail}" Placeholder="Email" TextColor="{Binding ValidEmail}" FontSize="Medium" />
 
-                                 <Label Text="Phone number" TextColor="#005AD4" FontSize="Medium" />
-                                <Entry Text="{Binding UPhoneNo}" Placeholder="Phone Number" TextColor="Green" FontSize="Medium" IsPassword="True"/>
-                               
-                                <StackLayout Orientation="Vertical" Padding="0, 100, 0, 0">
-                                    <!--Have to scroll down to see save butttttton-->
-                                    <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"
-                                        Style="{StaticResource mainStyle}"/>
-                                </StackLayout>
-                                
-                            </StackLayout>
-                        </ViewCell>
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+                <Label Text="Phone Number" TextColor="#005AD4" FontSize="Medium" />
+                <Entry Text="{Binding UPhoneNo}" Placeholder="Phone Number" TextColor="Green" FontSize="Medium" />
+
+                <Label Text="isHost?" TextColor="#005AD4" FontSize="Medium" />
+                <Entry Text="{Binding UisHost}" Placeholder="Enter True or False" TextColor="Green" FontSize="Medium" />
+
+                <Label Text="Password" TextColor="#005AD4" FontSize="Medium" />
+                <Entry Text="{Binding UPassword}" Placeholder="Enter True or False" TextColor="Green" FontSize="Medium" />
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="btnHost" Text="Host Mode" Clicked="btnHost_Clicked" Style="{StaticResource mainStyle}"/>
+                    <Button x:Name="btnGuest" Text="Guest Mode" Clicked="btnGuest_Clicked" Style="{StaticResource mainStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <!--<Button x:Name="btnLogout" Text="Logout" Clicked="btnLogout_Clicked" Style="{StaticResource mainStyle}"/>-->
+                    <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked" Style="{StaticResource mainStyle}"/>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

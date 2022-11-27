@@ -28,6 +28,10 @@
                                 <Label Text="Email" TextColor="Blue" FontSize="Medium" />
                                 <Entry Text="{Binding UEmail}" Placeholder="Email" TextColor="{Binding ValidEmail}" FontSize="Medium" />
 
+                                <Label Text="Phone Number" TextColor="Blue" FontSize="Medium" />
+                                <Entry Text="{Binding UPhoneNo}" Placeholder="Phone Number" TextColor="Green" FontSize="Medium" />
+
+
                                 <Label Text="Password" TextColor="Blue" FontSize="Medium" />
                                 <Entry Text="{Binding UPassword}" Placeholder="Password" TextColor="Green" FontSize="Medium" IsPassword="True"/>
 

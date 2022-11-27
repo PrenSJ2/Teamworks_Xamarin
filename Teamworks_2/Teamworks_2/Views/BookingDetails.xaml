@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Booking Details"
+    NavigationPage.HasNavigationBar="False"
+    x:Class="Teamworks_2.Views.BookingDetails">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout Spacing="10">
+                <Label Text="Office Details" TextColor="black" FontSize="Medium" FontAttributes="Bold"/>
+                <Image Source="{Binding CurrentOffice.Image}" Aspect="AspectFill" HeightRequest="135"/>
+                <StackLayout Padding="10, 10, 10, 10">
+                    <StackLayout>
+                        <Label Text="{Binding CurrentOffice.Name}" FontSize="Medium" FontAttributes="Bold" TextColor="black"/>
+                        <Label Text="{Binding CurrentOffice.Location}" FontSize="Small"  TextColor="black"/>
+                        <Label Text="{Binding CurrentOffice.Sqft}" FontSize="Small" TextColor="black" />
+                        <Label Text="{Binding CurrentOffice.Description}" FontSize="Small" TextColor="black" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="50">
+                        <StackLayout>
+                            <Label Text="Amenities" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
+                                        VerticalOptions="StartAndExpand" HorizontalOptions= "StartAndExpand" />
+                            <Label Text="{Binding CurrentOffice.Amenities}" FontSize="Small" FontAttributes="Bold" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Features" TextColor="Black" FontAttributes="Bold" FontSize="Medium"
+                                        VerticalOptions="StartAndExpand" HorizontalOptions= "StartAndExpand" />
+                            <Label Text="{Binding CurrentOffice.Features}" FontSize="Small" FontAttributes="Bold" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Label Text="Booking Info" TextColor="black" FontSize="Medium" FontAttributes="Bold"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Booking Purpose:" TextColor="black" FontSize="Small" />
+                        <Label Text="{Binding CurrentBooking.Activity}"  TextColor="black" FontSize="Small" />
+                    </StackLayout>
+                     <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Booking Period:" TextColor="black" FontSize="Small" />
+                        <Label Text="{Binding CurrentBooking.TimePeriod}"  TextColor="black" FontSize="Small" />
+                    </StackLayout>               
+
+                    <Label Text="Price" TextColor="black" FontSize="Medium" FontAttributes="Bold"/>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Space Rental" TextColor="black" FontSize="Small" />
+                        <Label Text="$"  TextColor="black" FontSize="Small" />
+                        <Label Text="{Binding CurrentBooking.OfficePrice}"  TextColor="black" FontSize="Small" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Service Fee" TextColor="black" FontSize="Small" />
+                        <Label Text="$"  TextColor="black" FontSize="Small" />
+
+                        <Label Text="{Binding CurrentBooking.ServiceFee}"  TextColor="black" FontSize="Small" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Spacing="10">
+                        <Label Text="Total" TextColor="black" FontSize="Small" FontAttributes="Bold"/>
+                        <Label Text="$"  TextColor="black" FontSize="Small" FontAttributes="Bold"/>
+
+                        <Label Text="{Binding CurrentBooking.FinalPrice}"  TextColor="black" FontSize="Small" FontAttributes="Bold"/>
+                </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

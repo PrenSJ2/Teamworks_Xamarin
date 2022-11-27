@@ -47,7 +47,6 @@ namespace Teamworks_2.ViewModels
             DBInstance = new Services.Database();
             var founduser = DBInstance.ValidateUser(UEmail, UPassword);
 
-            globalref.isGuestLoggedIn = true;
             globalref.isHostLoggedIn = false;
 
             if (founduser != null)
@@ -55,18 +54,16 @@ namespace Teamworks_2.ViewModels
                 valid = true;
                 globalref.ActiveUser = founduser;
 
-                //if (founduser.isHost)
-                //{
-                //    globalref.isHostLoggedIn = true;
-                //    globalref.isGuestLoggedIn = false;
+                if (founduser.isHost)
+                {
+                    globalref.isHostLoggedIn = true;
 
-                //}
-                //else
-                //{
-                //    globalref.isGuestLoggedIn = true;
-                //    globalref.isHostLoggedIn = false;
+                }
+                else
+                {
+                    globalref.isHostLoggedIn = false;
 
-                //}
+                }
             }
 
             return valid;

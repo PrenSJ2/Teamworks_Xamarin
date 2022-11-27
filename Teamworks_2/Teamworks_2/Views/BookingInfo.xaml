@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    x:Class="Teamworks_2.Views.BookingInfo"
+    Title="{Binding UOfficeName}"
+    >
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <!--<Image Source="profilePic.png" HeightRequest="100"/>-->
+            <StackLayout Spacing="10">
+                <Label Text="Date and Time" TextColor="#005AD4" FontSize="Medium" FontAttributes="Bold" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Start Date" TextColor="#005AD4" FontSize="Medium" />
+                        <DatePicker x:Name="StartDate" MinimumDate="{x:Static sys:DateTime.Now}" Date="{Binding UStartDate}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Start Time" TextColor="#005AD4" FontSize="Medium" />
+                        <TimePicker x:Name="StartTime" Time="{Binding UStartTime}"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="End Date" TextColor="#005AD4" FontSize="Medium" />
+                        <DatePicker x:Name="EndDate" MinimumDate="{x:Static sys:DateTime.Now}" Date="{Binding UEndDate}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="End Time" TextColor="#005AD4" FontSize="Medium" />
+                        <TimePicker x:Name="EndTime" Time="{Binding UEndTime}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <Label Text="Number of People" TextColor="#005AD4" FontSize="Medium"  FontAttributes="Bold"/>
+                <Entry Text="{Binding UNumPeople}" Placeholder="Number of People" TextColor="Green" FontSize="Medium" />
+                                
+                <Label Text="Activity" TextColor="#005AD4" FontSize="Medium" FontAttributes="Bold"/>
+                <Entry Text="{Binding UActivity}" Placeholder="Activity" TextColor="Green" FontSize="Medium" />
+                
+                <Button x:Name="btnContinue" Text="Continue to Payment" Clicked="btnContinue_Clicked" Style="{StaticResource mainStyle}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
