@@ -21,6 +21,23 @@ namespace Teamworks_2.ViewModels
             CurrentBooking = globalref.SelectedBooking;
             BookedGuest = newDBInstance.GetUserByID(globalref.SelectedBooking.UID);
             CurrentOffice = newDBInstance.GetOfficeByID(globalref.SelectedBooking.OID);
+            AllOfficeAddons = newDBInstance.GetAllAddonsByOID(globalref.SelectedBooking.OID);
+
+        }
+
+        private ObservableCollection<Models.Addon> allofficeaddons;
+
+        public ObservableCollection<Models.Addon> AllOfficeAddons
+        {
+            get
+            {
+                return allofficeaddons;
+            }
+            set
+            {
+                allofficeaddons = value;
+                OnPropertyChanged("AllOfficeAddons");
+            }
         }
 
         private Models.User bookedguest;

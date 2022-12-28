@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Text;
-using Teamworks_2.Models;
-using Teamworks_2.Views;
 
 namespace Teamworks_2.Services
 {
@@ -168,16 +166,15 @@ namespace Teamworks_2.Services
         }
 
         // Return a Office based on The OfficeID
-        public Models.Addon GetOfficeByID(int oid)
+        public Models.Office GetOfficeByID(int oid)
         {
             //Office office;
 
             // Query to return a persons in the DB by ID
-            var alladdons = DatabaseConnection.Table<Models.Addon>()
+            var office = DatabaseConnection.Table<Models.Office>()
                             .Where(offi => offi.OID == oid)
-                            .ToList;
-            addons = new ObservableCollection<Models.Addon>(alladdons);
-            return addons;
+                            .FirstOrDefault();
+            return office;
         }
 
         // Addons
@@ -203,15 +200,17 @@ namespace Teamworks_2.Services
             return updatestatus;
         }
 
-        // Return addons based on The office Id
-        public Models.User GetAddonsByOID(int oid)
+        // Return ALL addons based on the booking office
+        public ObservableCollection<Models.Addon> GetAllAddonsByOID(int oid)
         {
+            ObservableCollection<Models.Addon> addons;
 
-            // Query to return a persons in the DB by ID
-            var user = DatabaseConnection.Table<Models.Addon>()
-                            .Where(usr => usr.OID == oid)
-                            .FirstOrDefault();
-            return user;
+            // Query to return all persons in the DB
+            var alladdons = DatabaseConnection.Table<Models.Addon>()
+                .Where(addon => addon.OID == oid)
+                .ToList();
+            addons = new ObservableCollection<Models.Addon>(alladdons);
+            return addons;
         }
 
         // Bookings
