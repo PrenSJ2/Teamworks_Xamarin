@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Teamworks_2.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -38,10 +39,15 @@ namespace Teamworks_2.Views
             }
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            this.BindingContext = new OfficesVM();
+        }
 
         //private async void MainMovieView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
 
-       //{
+        //{
         //    if (e.CurrentSelection != null)
         //    {
         //        globalref.SelectedOffice = SelectedOffice;
