@@ -177,6 +177,41 @@ namespace Teamworks_2.Services
             return office;
         }
 
+        // Addons
+
+        // Insert a new addon
+        public int AddAddon(Models.Addon addon)
+        {
+            var insertstatus = DatabaseConnection.Insert(addon);
+            return insertstatus;
+        }
+
+        // Delete addon
+        public int DeleteAddon(Models.Addon addon)
+        {
+            var deletestatus = DatabaseConnection.Delete(addon);
+            return deletestatus;
+        }
+
+        // Update an addon
+        public int UpdateAddon(Models.Addon addon)
+        {
+            var updatestatus = DatabaseConnection.Update(addon);
+            return updatestatus;
+        }
+
+        // Return ALL addons based on the booking office
+        public ObservableCollection<Models.Addon> GetAllAddonsByOID(int oid)
+        {
+            ObservableCollection<Models.Addon> addons;
+
+            // Query to return all persons in the DB
+            var alladdons = DatabaseConnection.Table<Models.Addon>()
+                .Where(addon => addon.OID == oid)
+                .ToList();
+            addons = new ObservableCollection<Models.Addon>(alladdons);
+            return addons;
+        }
 
         // Bookings
 

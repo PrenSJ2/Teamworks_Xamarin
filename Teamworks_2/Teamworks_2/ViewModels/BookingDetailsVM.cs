@@ -21,6 +21,7 @@ namespace Teamworks_2.ViewModels
             CurrentBooking = globalref.SelectedBooking;
             //Models.User CurrentUser = newDBInstance.GetUserByID(globalref.SelectedBooking.UID);
             CurrentOffice = newDBInstance.GetOfficeByID(globalref.SelectedBooking.OID);
+            
         }
 
         private Models.Office currentoffice;
