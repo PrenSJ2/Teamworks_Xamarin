@@ -35,6 +35,10 @@ namespace Teamworks_2.Views
         {
             await Shell.Current.GoToAsync("//HostHome");
         }
+
+        void btnAddAddon_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
     }
 }
 

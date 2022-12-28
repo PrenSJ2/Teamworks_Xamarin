@@ -44,6 +44,109 @@
                                 <Label Text="Image" TextColor="Blue" FontSize="Medium" />
                                 <Entry Text="{Binding Image}" Placeholder="Image" TextColor="Green" FontSize="Medium"/>
 
+
+                                <!--Addons-->
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Image" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon_image}" Placeholder="Addon Image" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Name" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon_name}" Placeholder="Addon Name" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Quantity" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon_quantity}" Placeholder="Addon Quantity" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Price" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon_price}" Placeholder="Addon Price" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <!--<Button x:Name="btnAddAddon" Text="Add A" Clicked="btnAddAddon_Clicked" Style="{StaticResource mainStyle}" />-->
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Image" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon2_image}" Placeholder="Addon Image" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Name" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon2_name}" Placeholder="Addon Name" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Quantity" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon2_quantity}" Placeholder="Addon Quantity" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Price" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon2_price}" Placeholder="Addon Price" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <!--<Button x:Name="btnAddAddon" Text="Add A" Clicked="btnAddAddon_Clicked" Style="{StaticResource mainStyle}" />-->
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Image" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon3_image}" Placeholder="Addon Image" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Name" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon3_name}" Placeholder="Addon Name" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Quantity" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon3_quantity}" Placeholder="Addon Quantity" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Price" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon3_price}" Placeholder="Addon Price" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <!--<Button x:Name="btnAddAddon" Text="Add A" Clicked="btnAddAddon_Clicked" Style="{StaticResource mainStyle}" />-->
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Image" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon4_image}" Placeholder="Addon Image" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Name" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon4_name}" Placeholder="Addon Name" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Quantity" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon4_quantity}" Placeholder="Addon Quantity" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Price" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon4_price}" Placeholder="Addon Price" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <!--<Button x:Name="btnAddAddon" Text="Add A" Clicked="btnAddAddon_Clicked" Style="{StaticResource mainStyle}" />-->
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Image" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon5_image}" Placeholder="Addon Image" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Name" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Text="{Binding Addon5_name}" Placeholder="Addon Name" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Quantity" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon5_quantity}" Placeholder="Addon Quantity" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <Label Text="Addon Price" TextColor="Blue" FontSize="Medium"/>
+                                        <Entry Keyboard="Numeric" Text="{Binding Addon5_price}" Placeholder="Addon Price" TextColor="Green" FontSize="Medium"/>
+                                    </StackLayout>
+                                    <!--<Button x:Name="btnAddAddon" Text="Add A" Clicked="btnAddAddon_Clicked" Style="{StaticResource mainStyle}" />-->
+                                </StackLayout>
+
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                     <Button x:Name="btnAddOffice" Text="Add Office" Clicked="btnAddOffice_Clicked"
                                         Style="{StaticResource mainStyle}" />

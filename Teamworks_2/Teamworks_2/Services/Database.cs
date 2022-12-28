@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Text;
+using Teamworks_2.Models;
+using Teamworks_2.Views;
 
 namespace Teamworks_2.Services
 {
@@ -166,17 +168,51 @@ namespace Teamworks_2.Services
         }
 
         // Return a Office based on The OfficeID
-        public Models.Office GetOfficeByID(int oid)
+        public Models.Addon GetOfficeByID(int oid)
         {
             //Office office;
 
             // Query to return a persons in the DB by ID
-            var office = DatabaseConnection.Table<Models.Office>()
+            var alladdons = DatabaseConnection.Table<Models.Addon>()
                             .Where(offi => offi.OID == oid)
-                            .FirstOrDefault();
-            return office;
+                            .ToList;
+            addons = new ObservableCollection<Models.Addon>(alladdons);
+            return addons;
         }
 
+        // Addons
+
+        // Insert a new addon
+        public int AddAddon(Models.Addon addon)
+        {
+            var insertstatus = DatabaseConnection.Insert(addon);
+            return insertstatus;
+        }
+
+        // Delete addon
+        public int DeleteAddon(Models.Addon addon)
+        {
+            var deletestatus = DatabaseConnection.Delete(addon);
+            return deletestatus;
+        }
+
+        // Update an addon
+        public int UpdateAddon(Models.Addon addon)
+        {
+            var updatestatus = DatabaseConnection.Update(addon);
+            return updatestatus;
+        }
+
+        // Return addons based on The office Id
+        public Models.User GetAddonsByOID(int oid)
+        {
+
+            // Query to return a persons in the DB by ID
+            var user = DatabaseConnection.Table<Models.Addon>()
+                            .Where(usr => usr.OID == oid)
+                            .FirstOrDefault();
+            return user;
+        }
 
         // Bookings
 

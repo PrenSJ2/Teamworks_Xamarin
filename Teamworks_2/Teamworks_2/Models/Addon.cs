@@ -14,7 +14,6 @@ namespace Teamworks_2.Models
         public string ImgName { get; set; }
 
         // link to Office by ID
-        //Working on addons test
         public int OID { get; set; }
     }
 }
