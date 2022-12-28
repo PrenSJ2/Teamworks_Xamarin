@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Teamworks_2.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -31,8 +32,14 @@ namespace Teamworks_2.Views
                 globalref.SelectedOffice = hostofficesvm.SelectedOffice;
                 //Models.Office thisoffice = e.CurrentSelection[0];
                 //await Shell.Current.GoToAsync($"{nameof(BookNow)}?{nameof(ViewModels.BookNowVM.CurrentOffice)}={officesvm.SelectedOffice}");
-                await Shell.Current.GoToAsync("EditOffice");
-
+                try
+                {
+                    await Shell.Current.GoToAsync("EditOffice");
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", "An error occurred while navigating to the EditOffice page: " + ex.Message, "OK");
+                }
             }
         }
 
@@ -53,6 +60,12 @@ namespace Teamworks_2.Views
         //        await Navigation.PushModalAsync(new NavigationPage(new OfficeDetails()));
         //    }
         //}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            this.BindingContext = new HostOfficesVM();
+        }
     }
 }
 
