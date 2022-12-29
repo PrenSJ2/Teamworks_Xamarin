@@ -37,17 +37,6 @@ namespace Teamworks_2.Views
 
             }
         }
-
-
-        //private async void MainMovieView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
-
-       //{
-        //    if (e.CurrentSelection != null)
-        //    {
-        //        globalref.SelectedOffice = SelectedOffice;
-        //        await Navigation.PushModalAsync(new NavigationPage(new OfficeDetails()));
-        //    }
-        //}
     }
 }
 

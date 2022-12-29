@@ -262,7 +262,7 @@ namespace Teamworks_2.ViewModels
                     ImgName = OfficeAddon.ImgName,
                     Name = OfficeAddon.Name,
                     Price = OfficeAddon.Price,
-                    Quantity = OfficeAddon.
+                    Quantity = StepperValue
                 });
             }
             globalref.TempBooking = newbooking;
