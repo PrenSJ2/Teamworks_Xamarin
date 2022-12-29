@@ -146,17 +146,7 @@ namespace Teamworks_2.ViewModels
         // double check for image
         private string image;
         public string Image;
-        //{
-        //    get
-        //    {
-        //        return image;
-        //    }
-        //    set
-        //    {
-        //        image = value;
-        //        OnPropertyChanged("Image");
-        //    }
-        //}
+
        public ICommand SelectImageCommand { get; set; }
 
         public AddOfficeVM()
