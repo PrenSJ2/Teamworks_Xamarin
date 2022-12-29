@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
 using Teamworks_2;
+using Teamworks_2.Models;
 using Xamarin.Forms;
 
 namespace Teamworks_2.ViewModels
@@ -143,18 +145,24 @@ namespace Teamworks_2.ViewModels
 
         // double check for image
         private string image;
-        public string Image
+        public string Image;
+
+       public ICommand SelectImageCommand { get; set; }
+
+        public AddOfficeVM()
         {
-            get
-            {
-                return image;
-            }
-            set
-            {
-                image = value;
-                OnPropertyChanged("Image");
-            }
+            SelectImageCommand = new Command(SelectImage);
         }
+
+        async void SelectImage()
+        {
+            var imageService = DependencyService.Get<IImageService>();
+            var image = await imageService.PickImageAsync();
+
+            // Set the image property in the view model to the selected image
+            Image = image;
+        }
+
 
         public int SaveOffice()
         {

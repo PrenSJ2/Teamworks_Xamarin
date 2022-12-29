@@ -43,7 +43,8 @@
                                 <!--Have to see how to add an actual image-->
                                 <!--Dennis new comment-->
                                 <Label Text="Image" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding Image}" Placeholder="Image" TextColor="Green" FontSize="Medium"/>
+                                <Button Text="Select Image" Command="{Binding SelectImageCommand}" />
+
 
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                     <Button x:Name="btnAddOffice" Text="Add Office" Clicked="btnAddOffice_Clicked"
