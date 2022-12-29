@@ -1,5 +1,9 @@
 ﻿using System;
 using SQLite;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
+
+
 
 namespace Teamworks_2.Models
 {
@@ -28,6 +32,7 @@ namespace Teamworks_2.Models
 
         
         // list of booked selected addons
+        public ObservableCollection<Models.Addon> BookedAddons { get; set; }
 
         //public double TotalAddonPrice { get; set; }
 

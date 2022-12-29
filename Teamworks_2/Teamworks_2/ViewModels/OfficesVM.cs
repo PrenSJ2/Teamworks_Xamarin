@@ -37,7 +37,7 @@ namespace Teamworks_2.ViewModels
 
         }
 
-        public Models.Office SelectedOffice { get; set; }
+        public Models.Office SelecedOffice { get; set; }
 
         private ObservableCollection<Models.Office> alloffices;
 

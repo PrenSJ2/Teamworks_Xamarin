@@ -9,15 +9,34 @@ namespace Teamworks_2.ViewModels
 {
     public class BookingInfoVM : INotifyPropertyChanged
     {
-        Services.Database DBInstance = new Services.Database();
+        Services.Database newDBInstance;
 
         App globalref = (App)Application.Current;
-
+        
 
         public BookingInfoVM()
         {
             UOfficeName = globalref.SelectedOffice.Name;
+            uOID = globalref.SelectedOffice.OID;
+            OfficeAddons = newDBInstance.GetAllAddonsByOID(uOID);
             UStartDate = DateTime.Now;
+        }
+
+        private int uOID;
+
+        private ObservableCollection<Models.Addon> officeaddons;
+
+        public ObservableCollection<Models.Addon> OfficeAddons
+        {
+            get
+            {
+                return officeaddons;
+            }
+            set
+            {
+                officeaddons = value;
+                OnPropertyChanged("OfficeAddons");
+            }
         }
 
         private string uOfficeName;
@@ -118,7 +137,78 @@ namespace Teamworks_2.ViewModels
                 OnPropertyChanged("UActivity");
             }
         }
-        
+
+        //Addons Data to Booked Addons
+
+        private string imgname;
+        public string ImgName
+        {
+            get
+            {
+                return imgname;
+            }
+            set
+            {
+                imgname = value;
+                OnPropertyChanged("ImgName");
+            }
+        }
+
+        private string name;
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+
+        private double price;
+        public double Price
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                price = value;
+                OnPropertyChanged("Price");
+            }
+        }
+
+        private int steppervalue;
+        public int StepperValue
+        {
+            get
+            {
+                return steppervalue;
+            }
+            set
+            {
+                steppervalue = value;
+                OnPropertyChanged("StepperValue");
+            }
+        }
+
+        private int selectedquantity;
+        public int SelectedQuantity
+        {
+            get
+            {
+                return selectedquantity;
+            }
+            set
+            {
+                selectedquantity = steppervalue;
+                OnPropertyChanged("SelectedQuantity");
+            }
+        }
 
         public bool IsBookingActive()
         {
@@ -162,6 +252,19 @@ namespace Teamworks_2.ViewModels
             //newbooking.ServiceFee = UServiceFee;
             //newbooking.FinalPrice = UFinalPrice;
 
+            // Addons
+            
+
+            foreach (Models.Addon OfficeAddon in OfficeAddons)
+            {
+                newbooking.BookedAddons.Add(new Models.Addon
+                {
+                    ImgName = OfficeAddon.ImgName,
+                    Name = OfficeAddon.Name,
+                    Price = OfficeAddon.Price,
+                    Quantity = OfficeAddon.
+                });
+            }
             globalref.TempBooking = newbooking;
 
             //addstatus = DBInstance.AddBooking(newbooking);
