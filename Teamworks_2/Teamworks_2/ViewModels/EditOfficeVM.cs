@@ -12,15 +12,30 @@ namespace Teamworks_2.ViewModels
 {
     public class EditOfficeVM : INotifyPropertyChanged
     {
-        Services.Database DBInstance = new Services.Database();
-
+        Services.Database DBInstance; 
         App globalref = (App)Application.Current;
 
         public EditOfficeVM()
         {
-            LoadOffice();
-            //SelectImageCommand = new Command(SelectImage);
+            DBInstance = new Services.Database();
+            //LoadOffice();
+            SelectImageCommand = new Command(SelectImage);
+            CurrentOffice = globalref.SelectedOffice;
 
+        }
+
+        private Models.Office currentoffice;
+        public Models.Office CurrentOffice
+        {
+            get
+            {
+                return currentoffice;
+            }
+            set
+            {
+                currentoffice = value;
+                OnPropertyChanged("CurrentOffice");
+            }
         }
 
         private string image;
@@ -166,39 +181,41 @@ namespace Teamworks_2.ViewModels
         }
 
 
-        public void LoadOffice()
+        //public void LoadOffice()
+        //{
+        //    Models.Office selectedOffice = globalref.SelectedOffice;
+        //    Office_name = selectedOffice.Name;
+        //    Location = selectedOffice.Location;
+        //    Num_guests = selectedOffice.NumGuests;
+        //    Sqft = selectedOffice.Sqft;
+        //    Description = selectedOffice.Description;
+        //    pricePerhour = selectedOffice.Hourly;
+        //    MinHours = selectedOffice.MinHours;
+        //    Amenities = selectedOffice.Amenities;
+        //    Features = selectedOffice.Features;
+        //}
+        public int SaveChanges()
         {
-            Models.Office selectedOffice = globalref.SelectedOffice;
-            Office_name = selectedOffice.Name;
-            Location = selectedOffice.Location;
-            Num_guests = selectedOffice.NumGuests;
-            Sqft = selectedOffice.Sqft;
-            Description = selectedOffice.Description;
-            pricePerhour = selectedOffice.Hourly;
-            MinHours = selectedOffice.MinHours;
-            Amenities = selectedOffice.Amenities;
-            Features = selectedOffice.Features;
+            int updateStatus = 0;
+
+            // Update the properties of the current office object with the new values
+            CurrentOffice.Name = Office_name;
+            CurrentOffice.Location = Location;
+            CurrentOffice.NumGuests = Num_guests;
+            CurrentOffice.Sqft = Sqft;
+            CurrentOffice.Description = Description;
+            CurrentOffice.Hourly = PricePerhour;
+            CurrentOffice.MinHours = MinHours;
+            CurrentOffice.Amenities = Amenities;
+            CurrentOffice.Features = Features;
+            CurrentOffice.Image = Image;
+
+            // Call the UpdateOffice function of the database service to update the office record in the database
+            updateStatus = DBInstance.UpdateOffice(CurrentOffice);
+
+            return updateStatus;
         }
-        public int SaveOffice()
-        {
-            int addstatus = 0;
-            Models.Office newoffice = new Models.Office();
-            newoffice.Name = Office_name;
-            newoffice.Location = Location;
-            newoffice.NumGuests = Num_guests;
-            newoffice.Sqft = Sqft;
-            newoffice.Description = Description;
-            newoffice.Hourly = PricePerhour;
-            newoffice.MinHours = MinHours;
-            newoffice.Amenities = Amenities;
-            newoffice.Features = Features;
-            //newoffice.Image = Image;
 
-            addstatus = DBInstance.AddOffice(newoffice);
-
-            return addstatus;
-
-        }
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyname)
         {

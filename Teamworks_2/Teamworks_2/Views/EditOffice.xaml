@@ -13,34 +13,35 @@
                         <ViewCell>
                             <StackLayout Spacing="10">
 
-                                <Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="235" HorizontalOptions="FillAndExpand" />
+                                <Image Source="{Binding CurrentOffice.Image}" Aspect="AspectFill" HeightRequest="235" HorizontalOptions="FillAndExpand" />
+                                <Button Text="Edit Image" Command="{Binding SelectImageCommand}" />
 
                                 <Label Text="Office Name" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding Office_name}" Placeholder="Office Name" TextColor="Green" FontSize="Medium" />
+                                <Entry Text="{Binding CurrentOffice.Name}" Placeholder="Office Name" TextColor="Green" FontSize="Medium" />
 
                                 <Label Text="Location" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding Location}" Placeholder="Location" TextColor="Green" FontSize="Medium" />
+                                <Entry Text="{Binding CurrentOffice.Location}" Placeholder="Location" TextColor="Green" FontSize="Medium" />
 
                                 <Label Text="Number of Guests" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding Num_guests}" Placeholder="Number of Guests" TextColor="Green" FontSize="Medium" />
+                                <Entry Text="{Binding CurrentOffice.NumGuests}" Placeholder="Number of Guests" TextColor="Green" FontSize="Medium" />
 
                                 <Label Text="Size(sqft)" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding Sqft}" Placeholder="Size(sqft)" TextColor="Green" FontSize="Medium" />
+                                <Entry Text="{Binding CurrentOffice.Sqft}" Placeholder="Size(sqft)" TextColor="Green" FontSize="Medium" />
 
                                 <Label Text="Description" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding Description}" Placeholder="Description" TextColor="Green" FontSize="Medium"/>
+                                <Entry Text="{Binding CurrentOffice.Description}" Placeholder="Description" TextColor="Green" FontSize="Medium"/>
 
                                 <Label Text="Price (per hour)" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding PricePerhour}" Placeholder="Price (per hour)" TextColor="Green" FontSize="Medium"/>
+                                <Entry Text="{Binding CurrentOffice.Hourly}" Placeholder="Price (per hour)" TextColor="Green" FontSize="Medium"/>
 
                                 <Label Text="Minimum Hours" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding MinHours}" Placeholder="Minimum Hours" TextColor="Green" FontSize="Medium"/>
+                                <Entry Text="{Binding CurrentOffice.MinHours}" Placeholder="Minimum Hours" TextColor="Green" FontSize="Medium"/>
 
                                 <Label Text="Amenities" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding Amenities}" Placeholder="Amenities" TextColor="Green" FontSize="Medium"/>
+                                <Entry Text="{Binding CurrentOffice.Amenities}" Placeholder="Amenities" TextColor="Green" FontSize="Medium"/>
 
                                 <Label Text="Features" TextColor="Blue" FontSize="Medium" />
-                                <Entry Text="{Binding Features}" Placeholder="Features" TextColor="Green" FontSize="Medium"/>
+                                <Entry Text="{Binding CurrentOffice.Features}" Placeholder="Features" TextColor="Green" FontSize="Medium"/>
 
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                     <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"

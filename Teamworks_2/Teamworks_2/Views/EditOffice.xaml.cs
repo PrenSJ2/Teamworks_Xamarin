@@ -27,7 +27,7 @@ namespace Teamworks_2.Views
 
         void btnSave_Clicked(System.Object sender, System.EventArgs e)
         {
-            int editofficestatus = editofficeviewmodel.SaveOffice();
+            int editofficestatus = editofficeviewmodel.SaveChanges();
         }
 
         void btnCancel_Clicked(System.Object sender, System.EventArgs e)
