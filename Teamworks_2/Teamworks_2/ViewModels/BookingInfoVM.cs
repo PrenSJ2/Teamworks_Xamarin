@@ -256,13 +256,15 @@ namespace Teamworks_2.ViewModels
             
 
             foreach (Models.Addon OfficeAddon in OfficeAddons)
+                // foreach (StackLayout Data in CollectView:AddonSelection)
             {
+                // if steppervalue >=1 then ...
                 newbooking.BookedAddons.Add(new Models.Addon
                 {
                     ImgName = OfficeAddon.ImgName,
                     Name = OfficeAddon.Name,
                     Price = OfficeAddon.Price,
-                    Quantity = StepperValue
+                    Quantity = StepperValue //Stuck
                 });
             }
             globalref.TempBooking = newbooking;
