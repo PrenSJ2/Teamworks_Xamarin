@@ -34,7 +34,6 @@ namespace Teamworks_2.ViewModels
 
             // Load from DB into attribute
             AllOffices = newDBInstance.GetAllOffices();
-
         }
         public Models.Office SelectedOffice { get; set; }
 
