@@ -45,8 +45,8 @@
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                     <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"
                                         Style="{StaticResource mainStyle}" />
-                                    <Button x:Name="btnCancel" Text="Cancel" Clicked="btnCancel_Clicked"
-                                        Style="{StaticResource mainStyle}"/>
+                                    <Button x:Name="btnDelete" Text="Delete" Clicked="btnDelete_Clicked"
+                                        Style="{StaticResource mainStyle}" BackgroundColor="Red"/>
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>
