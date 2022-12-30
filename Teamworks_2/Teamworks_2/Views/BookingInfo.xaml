@@ -46,13 +46,13 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Spacing="10" Orientation="Vertical" Padding="10, 10, 10, 10">
-                                <Image Source="{Binding ImgName}" Aspect="AspectFill" HorizontalOptions="FillAndExpand" />
+                                <Image Source="{Binding ImgName1}" Aspect="AspectFill" HorizontalOptions="FillAndExpand" />
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding Name}" FontSize="Micro"/>
                                     <Label Text="{Binding Price}" FontSize="Micro" FontAttributes="Bold"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                                    <Label x:Name="AddonQuantity" Text="{Binding SelectedQuantity}"/>
+                                    <Label x:Name="AddonQuantity" BindingContext="{x:Reference AddonQuantityStepper}" Text="{Binding Value}"/>
                                     <Stepper x:Name="AddonQuantityStepper" Minimum="0" Maximum="{Binding Quantity}" Increment="1" Value="{Binding StepperValue}" HorizontalOptions="Center" />                            
                                 </StackLayout>
                             </StackLayout>

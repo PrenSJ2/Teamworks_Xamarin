@@ -140,17 +140,17 @@ namespace Teamworks_2.ViewModels
 
         //Addons Data to Booked Addons
 
-        private string imgname;
-        public string ImgName
+        private string imgname1;
+        public string ImgName1
         {
             get
             {
-                return imgname;
+                return imgname1;
             }
             set
             {
-                imgname = value;
-                OnPropertyChanged("ImgName");
+                imgname1 = value;
+                OnPropertyChanged("ImgName1");
             }
         }
 
@@ -193,20 +193,6 @@ namespace Teamworks_2.ViewModels
             {
                 steppervalue = value;
                 OnPropertyChanged("StepperValue");
-            }
-        }
-
-        private int selectedquantity;
-        public int SelectedQuantity
-        {
-            get
-            {
-                return selectedquantity;
-            }
-            set
-            {
-                selectedquantity = steppervalue;
-                OnPropertyChanged("SelectedQuantity");
             }
         }
 
@@ -264,7 +250,7 @@ namespace Teamworks_2.ViewModels
                     ImgName = OfficeAddon.ImgName,
                     Name = OfficeAddon.Name,
                     Price = OfficeAddon.Price,
-                    Quantity = StepperValue //Stuck
+                    Quantity = OfficeAddon.StepperValue //Stuck
                 });
             }
             globalref.TempBooking = newbooking;
