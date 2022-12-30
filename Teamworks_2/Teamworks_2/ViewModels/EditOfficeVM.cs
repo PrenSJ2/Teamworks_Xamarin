@@ -194,6 +194,14 @@ namespace Teamworks_2.ViewModels
             return addstatus;
 
         }
+
+        public int DeleteOffice()
+        {
+            int deletestatus = 0;
+            deletestatus = DBInstance.DeleteOffice(globalref.SelectedOffice);
+            return deletestatus;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyname)
         {

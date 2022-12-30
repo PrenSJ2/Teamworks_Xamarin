@@ -28,11 +28,19 @@ namespace Teamworks_2.Views
         void btnSave_Clicked(System.Object sender, System.EventArgs e)
         {
             int editofficestatus = editofficeviewmodel.SaveOffice();
+            this.Navigation.PopAsync();
         }
 
-        void btnCancel_Clicked(System.Object sender, System.EventArgs e)
+        async void btnDelete_Clicked(System.Object sender, System.EventArgs e)
         {
+            var deleteconfirm = await DisplayAlert("Delete Office", "Are you Sure?", "Yes", "No");
+            if (deleteconfirm) {
+                   int deleteofficestatus = editofficeviewmodel.DeleteOffice();
+            }
+
+            await this.Navigation.PopAsync();
         }
+
     }
 }
 
