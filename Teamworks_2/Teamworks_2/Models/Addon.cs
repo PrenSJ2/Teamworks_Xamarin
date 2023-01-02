@@ -10,6 +10,7 @@ namespace Teamworks_2.Models
         [Unique]
         public string Name { get; set; }
         public int Quantity { get; set; }
+        public int StepperValue { get; set; }
         public double Price { get; set; }
         public string ImgName { get; set; }
 
